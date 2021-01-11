@@ -1,4 +1,4 @@
-GET http://localhost:3000/tasks?search=2
+GET http://localhost:3000/tasks
 
 ###
 POST http://localhost:3000/tasks
@@ -6,19 +6,18 @@ Content-Type: application/json
 
 {
   "title": "asdfj",
-  "description": ""
+  "description": "sdfsdfwdsf"
 }
 
 ###
-GET http://localhost:3000/tasks/65de4810-38c7-419a-9554-2734f48c5966
+GET http://localhost:3000/tasks/7a8ecfdc-9dbb-4f61-b707-973f9fc80e61
 
 ###
-DELETE http://localhost:3000/tasks/d10410f7-5aac-4ec0-b28b-bfaa186786f3
-
+DELETE http://localhost:3000/tasks/6d1ae383-61b0-49a8-8fcc-26fac672bcc1
 ###
-PATCH http://localhost:3000/tasks/7ad13253-2182-4fbd-84cf-51aba11a0fbb/status
+PATCH http://localhost:3000/tasks/86c74863-31f4-4836-baa3-8647fe44ff8c/status
 Content-Type: application/json
 
 {
-  "status": "IN_PROGRESS"
+  "status": "TEST"
 }
