@@ -1,4 +1,4 @@
-GET http://localhost:3000/tasks?status=OPEN&search=test
+GET http://localhost:3000/tasks
 
 ###
 POST http://localhost:3000/tasks
@@ -10,13 +10,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/tasks/7a8ecfdc-9dbb-4f61-b707-973f9fc80e61
+GET http://localhost:3000/tasks/67
 
 ###
-DELETE http://localhost:3000/tasks/5
+DELETE http://localhost:3000/tasks/66
 
 ###
-PATCH http://localhost:3000/tasks/14/status
+PATCH http://localhost:3000/tasks/67/status
 Content-Type: application/json
 
 {
