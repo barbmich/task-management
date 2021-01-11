@@ -1,12 +1,12 @@
-GET http://localhost:3000/tasks
+GET http://localhost:3000/tasks?search=2
 
 ###
 POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "title": "title 2",
-  "description": "description 2"
+  "title": "asdfj",
+  "description": ""
 }
 
 ###
