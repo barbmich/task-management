@@ -1,4 +1,4 @@
-GET http://localhost:3000/tasks/2
+GET http://localhost:3000/tasks/6
 
 ###
 POST http://localhost:3000/tasks
@@ -16,9 +16,9 @@ GET http://localhost:3000/tasks/7a8ecfdc-9dbb-4f61-b707-973f9fc80e61
 DELETE http://localhost:3000/tasks/5
 
 ###
-PATCH http://localhost:3000/tasks/86c74863-31f4-4836-baa3-8647fe44ff8c/status
+PATCH http://localhost:3000/tasks/6/status
 Content-Type: application/json
 
 {
-  "status": "TEST"
+  "status": "DONE"
 }
