@@ -1,7 +1,13 @@
-import { MinLength } from 'class-validator';
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  Unique,
+} from 'typeorm';
 
 @Entity()
+@Unique(['username'])
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -10,6 +16,5 @@ export class User extends BaseEntity {
   username: string;
 
   @Column()
-  @MinLength(8)
   password: string;
 }
