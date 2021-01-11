@@ -1,4 +1,4 @@
-GET http://localhost:3000/tasks?search=
+GET http://localhost:3000/tasks/1
 
 ###
 POST http://localhost:3000/tasks
