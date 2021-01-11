@@ -5,6 +5,12 @@ POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "title": "title 1",
-  "description": "description 1"
+  "title": "title 2",
+  "description": "description 2"
 }
+
+###
+GET http://localhost:3000/tasks/65de4810-38c7-419a-9554-2734f48c5966
+
+###
+DELETE http://localhost:3000/tasks/d10410f7-5aac-4ec0-b28b-bfaa186786f3
