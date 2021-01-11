@@ -22,8 +22,17 @@ import { TasksService } from './tasks.service';
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
+  @Get('/reset')
+  deleteAllTasks(
+    @Query(ValidationPipe) filterDto: GetTasksFilterDto,
+  ): Promise<void> {
+    return this.tasksService.deleteAllTasks(filterDto);
+  }
+
   @Get()
-  getTasks(@Query(ValidationPipe) filterDto: GetTasksFilterDto) {
+  getTasks(
+    @Query(ValidationPipe) filterDto: GetTasksFilterDto,
+  ): Promise<Task[]> {
     return this.tasksService.getTasks(filterDto);
   }
 
