@@ -33,4 +33,10 @@ export class TasksService {
       return task.id !== id;
     });
   }
+
+  updateTaskStatus(id: string, status: TaskStatus) {
+    const task = this.getTaskById(id);
+    task.status = status;
+    return task;
+  }
 }
