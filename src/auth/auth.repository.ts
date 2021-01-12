@@ -5,12 +5,12 @@ import {
 import { EntityRepository, Repository } from 'typeorm';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { User } from './user.entity';
-import * as bcrypt from 'bcrypt';
+import { hash, genSalt } from 'bcrypt';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
   private async hashPassword(password: string, salt: string) {
-    return bcrypt.hash(password, salt);
+    return hash(password, salt);
   }
 
   async validateUserPassword(authCredentialsDto: AuthCredentialsDto) {
@@ -29,7 +29,7 @@ export class UserRepository extends Repository<User> {
 
     const user = new User();
     user.username = username;
-    user.salt = await bcrypt.genSalt();
+    user.salt = await genSalt();
     user.password = await this.hashPassword(password, user.salt);
 
     try {
