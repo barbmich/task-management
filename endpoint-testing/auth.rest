@@ -14,3 +14,7 @@ Content-Type: application/json
   "username": "test3",
   "password": "Password1"
 }
+
+###
+POST http://localhost:3000/auth/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjEwNDIzOTc0LCJleHAiOjE2MTA0Mjc1NzR9.0prX32drdCbIqDSkkF94iAIDX3I0ta0NpBcxrLLfnr4
