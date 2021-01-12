@@ -1,12 +1,14 @@
 GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjEwNDI2NzE0LCJleHAiOjE2MTA0MzAzMTR9.I3psTGPyhGyW6FCAAgzksswvZbEwfJl4cNTQaA_XRuc
 
 ###
 POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNjEwNDI4Mzc0LCJleHAiOjE2MTA0MzE5NzR9.xUgUEScjysYab4oqB6qd1lyryd3lrzbkmXPZnf5_RQY
 
 {
-  "title": "owl",
-  "description": "test"
+  "title": "task3",
+  "description": "desc3"
 }
 
 ###
