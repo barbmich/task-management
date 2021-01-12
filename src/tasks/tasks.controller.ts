@@ -15,7 +15,6 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { userInfo } from 'os';
 import { GetUser } from 'src/auth/get-user.decorator';
 import { User } from 'src/auth/user.entity';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -26,18 +25,16 @@ import { Task } from './task.entity';
 import { TasksService } from './tasks.service';
 
 @Controller('tasks')
-@UseGuards(AuthGuard())
 export class TasksController {
   constructor(private tasksService: TasksService) {}
 
-  // @Get('/reset')
-  // deleteAllTasks(
-  //   @Query(ValidationPipe) filterDto: GetTasksFilterDto,
-  // ): Promise<void> {
-  //   return this.tasksService.deleteAllTasks(filterDto);
-  // }
+  @Get('/reset')
+  deleteAllTasks(): Promise<void> {
+    return this.tasksService.deleteAllTasks();
+  }
 
   @Get()
+  @UseGuards(AuthGuard())
   getTasks(
     @Query(ValidationPipe) filterDto: GetTasksFilterDto,
     @GetUser() user: User,
@@ -46,6 +43,7 @@ export class TasksController {
   }
 
   @Get('/:id')
+  @UseGuards(AuthGuard())
   getTaskById(
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User,
@@ -54,6 +52,7 @@ export class TasksController {
   }
 
   @Post()
+  @UseGuards(AuthGuard())
   @UsePipes(ValidationPipe)
   createTask(
     @Body() createTaskDto: CreateTaskDto,
@@ -63,6 +62,7 @@ export class TasksController {
   }
 
   @Delete('/:id')
+  @UseGuards(AuthGuard())
   deleteTask(
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User,
@@ -71,6 +71,7 @@ export class TasksController {
   }
 
   @Patch('/:id/status')
+  @UseGuards(AuthGuard())
   updateTaskByStatus(
     @Param('id', ParseIntPipe) id: number,
     @Body('status', TaskStatusValidationPipe) status: TaskStatus,

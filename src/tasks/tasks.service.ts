@@ -51,14 +51,10 @@ export class TasksService {
     return task;
   }
 
-  // async deleteAllTasks(filterDto: GetTasksFilterDto): Promise<void> {
-  //   const tasks = await this.taskRepository.getTasks(filterDto);
-  //   for (const task of tasks) {
-  //     const result = await this.taskRepository.delete(task.id);
-  //     if (!result.affected) {
-  //       throw new NotFoundException();
-  //     }
-  //   }
-  //   return;
-  // }
+  async deleteAllTasks(): Promise<void> {
+    const tasks = await this.taskRepository.getAllTasks();
+    for (const task of tasks) {
+      await this.taskRepository.delete({ id: task.id });
+    }
+  }
 }

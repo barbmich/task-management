@@ -33,4 +33,11 @@ export class AuthService {
 
     return { accessToken };
   }
+
+  async deleteAllUsers() {
+    const users = await this.userRepository.getAllUsers();
+    for (const user of users) {
+      await this.userRepository.delete({ id: user.id });
+    }
+  }
 }

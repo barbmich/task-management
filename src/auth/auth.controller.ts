@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   Req,
   UseGuards,
@@ -34,5 +35,10 @@ export class AuthController {
   @UseGuards(AuthGuard())
   test(@GetUser() user: User) {
     console.log(user);
+  }
+
+  @Get('/reset')
+  deleteAllUsers() {
+    return this.authService.deleteAllUsers();
   }
 }

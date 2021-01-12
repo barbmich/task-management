@@ -1,5 +1,5 @@
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWF0IjoxNjEwNDMxOTEyLCJleHAiOjE2MTA0MzU1MTJ9.pP0USmTOYzJM11n41vCveVdea3bYCOXCb6J1u33wpeo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QyIiwiaWF0IjoxNjEwNDg5NzQ1LCJleHAiOjE2MTA0OTMzNDV9.DYKFZHvtdQ0F7PBN1-Qf5tQM_EgDH_P6bWg5IrlnPAM
 
 ###
 POST http://localhost:3000/tasks
@@ -28,3 +28,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc
 {
   "status": "DONE"
 }
+
+###
+GET http://localhost:3000/tasks/reset

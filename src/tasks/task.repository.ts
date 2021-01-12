@@ -38,4 +38,10 @@ export class TaskRepository extends Repository<Task> {
     delete task.user;
     return task;
   }
+
+  async getAllTasks() {
+    const query = this.createQueryBuilder('task');
+    const tasks: Task[] = await query.getMany();
+    return tasks;
+  }
 }

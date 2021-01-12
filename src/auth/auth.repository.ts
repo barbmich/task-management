@@ -42,4 +42,10 @@ export class UserRepository extends Repository<User> {
       }
     }
   }
+
+  async getAllUsers() {
+    const query = this.createQueryBuilder('user');
+    const users = await query.getMany();
+    return users;
+  }
 }
