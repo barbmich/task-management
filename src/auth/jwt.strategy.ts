@@ -7,10 +7,8 @@ import { JwtPayload } from './jwt-payload.interface';
 import { User } from './user.entity';
 require('dotenv').config();
 
-console.log(process.env.JWT_SECRET);
-
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
+export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,

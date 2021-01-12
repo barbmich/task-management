@@ -17,4 +17,4 @@ Content-Type: application/json
 
 ###
 POST http://localhost:3000/auth/test
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjEwNDIzOTc0LCJleHAiOjE2MTA0Mjc1NzR9.0prX32drdCbIqDSkkF94iAIDX3I0ta0NpBcxrLLfnr4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QzIiwiaWF0IjoxNjEwNDI2MDYwLCJleHAiOjE2MTA0Mjk2NjB9.zv4qrAivdWLBKfK5L-VyFmSow4Aev6LYsWWm3BVdZZc
