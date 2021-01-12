@@ -7,11 +7,13 @@ import { Task } from './task.entity';
 
 @EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {
-  async getTasks(filterDto: GetTasksFilterDto): Promise<Task[]> {
+  async getTasks(filterDto: GetTasksFilterDto, user: User): Promise<Task[]> {
     const { status, search } = filterDto;
     const query = this.createQueryBuilder('task');
+
+    query.where('task.userId = :userId', { userId: user.id });
     if (status) {
-      query.where('task.status = :status', { status });
+      query.andWhere('task.status = :status', { status });
     }
 
     if (search) {
@@ -33,6 +35,7 @@ export class TaskRepository extends Repository<Task> {
     task.status = TaskStatus.OPEN;
     task.user = user;
     await task.save();
+    delete task.user;
     return task;
   }
 }
