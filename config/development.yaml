@@ -1,0 +1,8 @@
+db:
+  host: 'localhost'
+  username: 'todo'
+  password: 'todo'
+  synchronize: true
+
+jwt:
+  secret: 'V3ryS3cretS3cret'
